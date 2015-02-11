@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mapTrack">
+<head>
+	<meta charset="UTF-8">
+	<title>My Spots</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+<h1 class="header">My Spots</h1>
+
+	<br><ng-view></ng-view>
+	
+    <!-- other ui-gmap-directives here -->
+
+<!-- Google -->
+	<script src="//maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places&sensor=false&language=en&v=3.17"></script>
+	
+<!-- angular -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.js"></script>
+  <script src="https://code.angularjs.org/1.4.0-beta.2/angular-route.min.js"></script>
+
+<!-- firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.0.4/firebase.js"></script>
+
+<!-- Angular Fire -->
+	<script src="https://cdn.firebase.com/libs/angularfire/0.9.2/angularfire.min.js"></script>
+
+<!-- Google-maps -->
+
+	<script src="bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  
+
+
+<!-- scripts -->
+  <script src="js/app.js"></script>
+  <script src="login/loginCtrl.js"></script>
+  <script src="Map/mapCtrl.js"></script>
+  <script src="Map/mapService.js"></script>
+  <script src="login/loginService.js"></script>
+  <script src="Map/addressService.js"></script>
+  <script src="firebaseService.js"></script>
+
+</body>
+</html>
