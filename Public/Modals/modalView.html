@@ -1,0 +1,12 @@
+<input type="text" ng-model="data" />
+	<div class="modal-view">
+	    <div class="days" ng-repeat="day in days">
+		    <p>{{day}}</p>
+		    <input type="checkbox" value="{{day}}" ng-click="handleDay(day)">
+	    </div>
+
+	  <div class="modal-footer">
+	    <button class="btn btn-primary" ng-click="submit()">Submit</button>
+	    <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	 	</div>
+	</div>

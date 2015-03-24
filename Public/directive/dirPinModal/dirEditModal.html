@@ -1,0 +1,17 @@
+
+<ng-transclude></ng-transclude>
+
+<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  
+
+<div class="modal-content">
+	<div ng-repeat="day in days">
+	    <p>{{day}}</p>
+	    <input type="checkbox" ng-click="handleDay(day)">
+	    </div>
+	    <button ng-click="runFunc()" data-dismiss="modal">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+		</div>
+		
+	</div>
+</div>

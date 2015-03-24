@@ -1,0 +1,173 @@
+
+html, body {
+    height: 100%;
+    width: 100%;
+    margin-top: -30px;
+}
+
+
+/*Index.html CSS*/
+
+.headerContainer {
+    height: 100px;
+    background-color: black;
+/*    display: flex;
+*/  line-height: -10px;
+    padding: 0 20px;
+    color: white;
+}
+
+.title{
+    font-size: 40px;
+}
+
+.left_header_container {
+    width: 50%;
+    height: 100%;
+    float: left;
+    line-height: 100px;
+}
+.right_header_container {
+    width: 50%;
+    height: 100%;
+    float: right;
+}
+.logout-Button {
+    float: right;
+    margin-top: 30px;
+}
+.user-pic {
+    width: 40px;
+    height: 100%;
+    float: right;
+    box-sizing: border-box;
+    margin: 0px 10px;
+}
+.user-pic img {
+    margin-top: 30px;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+}
+.user-name {
+    width: 180px;
+    height: 100px;
+    float: right;
+    line-height: 100px;
+    text-align: right;
+    box-sizing: border-box;
+}
+
+
+
+
+/*mapTmpl.html CSS*/
+
+.main-Container{
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+
+    /*position: relative;*/
+}
+
+.left-container{
+    width: 250px;
+    margin-right: 10px;
+    border-radius: 5px;
+    height: 100%;
+    float: left;
+    display: inline-block;
+    background-color: hsl(0,0%,93%,0.63);
+    padding-top: 20px;
+    color: black;
+    font-size: 12px;
+    overflow-y: scroll;
+    color: black;
+}
+.manual-button {
+    margin-bottom: 10px;
+}
+
+.left-container input {
+    color: black;
+
+}
+.pinFunctions {
+    text-align: center;
+
+}
+.pin-list {
+    overflow-y: scroll;
+    padding-left: 20px;
+}
+.saved-bins-header{
+    padding-left: 10px;
+    text-indent: 10px;
+    font-size: 22px;
+    padding-top: 15px;
+}
+.map {
+    margin: 0px;
+    overflow: hidden;
+    width: calc(100% - 265px);
+    height: 100%;
+}
+.angular-google-map-container {
+    height: calc(100% - 100px);
+    width: calc(100% - 250px);
+    position: absolute;
+    top: 0;
+    left: 250px;
+}
+
+/*Modal View*/
+.modal-view {
+    color: black;  
+}
+.manual-footer {
+    margin-left: 110px;
+    margin-top: 10px;
+}
+@media (max-width: 600px) {
+    .main-Container {
+    height: 100%;
+/*    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;*/
+    position: relative;
+    display: inline-block;
+
+    /*position: relative;*/
+}
+    .left-container{
+        width: 250px;
+        margin-right: 10px;
+        border-radius: 5px;
+        height: calc(100% - 300px);
+        float: left;
+        background-color: hsl(0,0%,93%,0.63);
+        padding-top: 20px;
+        color: black;
+        font-size: 12px;
+        overflow-y: scroll;
+        color: black;
+    }
+    .angular-google-map-container {
+        width: 300px;
+        height: 300px;
+        border: 1px solid red
+        clear: both;
+        display: block;
+    }
+    .map {
+        margin: 0px;
+        height: 100%;
+        clear: both;
+        display: block;
+    }
+}
+
+

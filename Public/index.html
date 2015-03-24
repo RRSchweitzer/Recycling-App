@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="recycle">
+<head>
+	<meta charset="UTF-8">
+	<title>Recycle-Utah</title>
+	<link rel="stylesheet" href="styles.css">
+  <!-- bootstrap -->
+  <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+    <script src="js/skel.min.js"></script>
+    <script src="js/init.js"></script>
+  <!-- Aerial Stuff -->
+  <noscript>
+    <link rel="stylesheet" href="css/skel.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-wide.css" />
+    <link rel="stylesheet" href="css/style-noscript.css" />
+  </noscript>
+   <!--[if lte IE 9]><link rel="stylesheet" href="css/ie/v9.css" /><![endif]-->
+   <!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+  
+  <!-- bootstrapsocial -->
+  <link rel="stylesheet" type="text/css" href="/bower_components/bootstrap-social/bootstrap-social.css">
+  <link rel="stylesheet" type="text/css" href="/bower_components/font-awesome/css/font-awesome.css">
+
+</head>
+<body>
+  <br><ng-view></ng-view>
+  
+    <!-- other ui-gmap-directives here -->
+
+<!-- Google -->
+  <script src="//maps.googleapis.com/maps/api/js?libraries=weather,geometry,visualization,places&sensor=false&language=en&v=3.17"></script>
+  
+<!-- angular -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.11/angular.js"></script>
+  <script src="//code.angularjs.org/1.4.0-beta.2/angular-route.min.js"></script>
+
+
+<!-- Google-maps -->
+  <script src="bower_components/lodash/dist/lodash.compat.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  
+<!-- scripts -->
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="js/app.js"></script>
+
+  <script src="Map/mapCtrl.js"></script>
+  <script src="Map/mapService.js"></script>
+  <script src="Login/loginCtrl.js"></script>
+  <script src="Login/loginService.js"></script>
+  <script src="Modals/modalInstanceCtrl.js"></script>
+  <script src="Modals/modalEditCtrl.js"></script>
+
+
+</body>
+</html>

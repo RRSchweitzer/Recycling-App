@@ -1,0 +1,64 @@
+<div class="headerContainer" ng-controller="loginCtrl" >
+  
+  <div class="left_header_container">
+    <div class="title">Recycle Utah</div>
+  </div>
+  
+  <div class="right_header_container">
+    <button class="logout-Button btn btn-danger" ng-click="logout()">Logout</button>
+    <div class="user-pic">
+      <img ng-src="{{userInfo.picture}}"></div>
+    <div class="user-name">{{userInfo.name}}</div>
+    <div class="fillerDiv"></div>
+  </div>
+</div>
+
+<div class="main-Container">
+
+	<div class="left-container">
+		<div class="pinFunctions">
+		
+				<button type="button" class="btn btn-primary" ng-click="open('sm')">Pin Your Bin</button>
+			
+			<div class="or">Or 
+			<br>
+
+				<button ng-click="isCollapsed = !isCollapsed" data-toggle="modal" type="button"  class="btn btn-success manual-button">Manually Enter Bin</button>
+			<div collapse="!isCollapsed">
+				<div class="well well-lg">
+					<input ng-model="road" placeholder="Enter Street">
+					<input ng-model="city" placeholder="Enter City">
+					<input ng-model="state" placeholder="Enter State">
+					<input ng-model="zipCode" placeholder="Enter Zip Code">
+					<button class="manual-footer" ng-click="open('sm')" type="button">Submit</button>
+				</div>
+			</div>
+			</div>
+		</div>
+		<div class="pinlist">
+			<div class="saved-bins-header"><b>Your Bins:</b></div>
+				<div class="pin-list" ng-repeat="pin in userPins">
+				<button class="btn btn-danger btn-sm pins" ng-click="removePin(pin._id)">Delete</button>
+				
+					<button type="button" class="btn btn-warning btn-sm" ng-click="edit(pin._id)">Edit</button>
+
+				<div class="pins">{{pin.full_name}}
+				</div>
+			</div><br>
+			<div class="saved-bins-header"><b>Other User Bins:</b></div>
+				<div class="pin-list" ng-repeat="pin in otherUserPins">
+					<li>{{pin.full_name}}</li>
+				</div>
+
+			
+		</div>
+	</div>
+  <div id="map_canvas" class="map">
+  	<ui-gmap-google-map center="map.center" zoom="map.zoom">
+		
+			<ui-gmap-marker coords="marker.coords" ng-repeat="marker in todaysPins" idkey="marker._id" options="options"></ui-gmap-marker>
+      
+      	<ui-gmap-layer namespace="weather" type="WeatherLayer" show="showWeather"></ui-gmap-layer>
+  	</ui-gmap-google-map>
+	</div>
+</div>
