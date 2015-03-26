@@ -8,7 +8,7 @@ var request = require('request');
 var FacebookStrategy = require('passport-facebook').Strategy
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 
-var port = 9080;
+var port = process.env.EXPRESS_PORT || 8080;
 var app = Express();
 
 //controllers
@@ -43,8 +43,8 @@ Passport.deserializeUser(function(obj, done) {
 
 //Facebook Login
 Passport.use(new FacebookStrategy({
-	clientID: '556621937773894',
-	clientSecret: 'bb48d656ff5e6a9f739df2bb95f7d7d1',
+	clientID: process.env.FACEBOOK_CLIENTID,
+	clientSecret: process.env.FACEBOOK_SECRET,
 	callbackURL: 'http://localhost:9080/auth/facebook/callback'
 }, function (token, refreshToken, profile, done) {
 	return done(null, profile)
@@ -73,8 +73,8 @@ app.get('/', function(req, res) {
 
 // Google Login
 Passport.use(new GoogleStrategy({
-	clientID: '40867727104-7kiqdv6gqmm2r5t49h5c9o802p0vqou3.apps.googleusercontent.com',
-	clientSecret: 'pKph1GLBthGDxBHtzTd9cRjJ',
+	clientID: process.env.GOOGLE_CLIENTID,
+	clientSecret: process.env.GOOGLE_SECRET,
 	callbackURL: 'http://127.0.0.1:' + port + '/auth/google/callback'
 }, function(token, tokenSecret, profile, done) {
 			userCtrl.updateOrCreate(profile)
