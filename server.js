@@ -1,3 +1,4 @@
+var Dotenv = require('dotenv').load();
 var Express = require('express');
 var Passport = require('passport');
 var Session = require('express-session')
