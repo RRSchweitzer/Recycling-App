@@ -75,7 +75,7 @@ app.get('/', function(req, res) {
 Passport.use(new GoogleStrategy({
 	clientID: process.env.GOOGLE_CLIENTID,
 	clientSecret: process.env.GOOGLE_SECRET,
-	callbackURL: 'http://Recycleut' + port + '/auth/google/callback'
+	callbackURL: 'http://Recycleut.org:' + port + '/auth/google/callback'
 }, function(token, tokenSecret, profile, done) {
 			userCtrl.updateOrCreate(profile)
 				.then(function(user) {
