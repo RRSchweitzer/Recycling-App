@@ -23,7 +23,7 @@ Mongoose.connect(mongoURI, function() {
 
 
 //middleware
-app.use(Express.static(__dirname + '/public'));
+app.use(Express.static(__dirname + '/Public'));
 app.use(BodyParser.json());
 app.use(Session({
 	secret: 'JFDSF98hew98h8hDSOIFoiDiji3333'
@@ -45,7 +45,7 @@ Passport.deserializeUser(function(obj, done) {
 Passport.use(new FacebookStrategy({
 	clientID: process.env.FACEBOOK_CLIENTID,
 	clientSecret: process.env.FACEBOOK_SECRET,
-	callbackURL: 'http://localhost:9080/auth/facebook/callback'
+	callbackURL: 'http://localhost:8080/auth/facebook/callback'
 }, function (token, refreshToken, profile, done) {
 	return done(null, profile)
 }));
