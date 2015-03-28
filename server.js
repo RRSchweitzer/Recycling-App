@@ -75,7 +75,7 @@ app.get('/', function(req, res) {
 Passport.use(new GoogleStrategy({
 	clientID: process.env.GOOGLE_CLIENTID,
 	clientSecret: process.env.GOOGLE_SECRET,
-	callbackURL: 'http://www.recycleut.org' + '/auth/google/callback'
+	callbackURL: 'http://recycleut.org/auth/google/callback'
 }, function(token, tokenSecret, profile, done) {
 			userCtrl.updateOrCreate(profile)
 				.then(function(user) {
@@ -90,8 +90,10 @@ app.get('/auth/google', Passport.authenticate('google', { scope: 'https://www.go
 
 app.get('/auth/google/callback',
 	Passport.authenticate('google', 
-	{ failureRedirect: '/#/login' }),
+	{ failureRedirect: '/#/login' },
+	{ successRedirect: '/#/map' }),
 	function (req, res) {
+		console.log("WHYOWHY");
 		res.redirect('/#/map')
 	});
 
@@ -115,6 +117,5 @@ app.get('/auth/google/callback',
 	app.delete('/api/user/removePin/:pinID', mapCtrl.removePin)
 
 
-app.listen(port, function() {
-	console.log('port: ' + port)
-})
+app.listen(8080)
+
