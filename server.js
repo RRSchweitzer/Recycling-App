@@ -80,7 +80,9 @@ Passport.use(new GoogleStrategy({
 		console.log("got here")
 			userCtrl.updateOrCreate(profile)
 				.then(function(user) {
+					console.log('is done a function?', done);
 					done(null, user);
+					
 				}, function(err) {
 					done(err, profile);
 				})
