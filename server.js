@@ -68,7 +68,7 @@ var requireAuth = function(req, res, next) {
   return next();
 }
 app.get('/', function(req, res) {
-	return res.sendFile(__dirname + '/Public/login/loginTmpl.html');
+	return res.sendFile(__dirname + '/Public/Login/loginTmpl.html');
 })
 
 // Google Login
@@ -77,6 +77,7 @@ Passport.use(new GoogleStrategy({
 	clientSecret: process.env.GOOGLE_SECRET,
 	callbackURL: 'http://recycleut.org/auth/google/callback'
 }, function(token, tokenSecret, profile, done) {
+		console.log("got here")
 			userCtrl.updateOrCreate(profile)
 				.then(function(user) {
 					done(null, user);
@@ -93,7 +94,11 @@ app.get('/auth/google/callback',
 	{ failureRedirect: '/#/login' },
 	{ successRedirect: '/#/map' }),
 	function (req, res) {
+
 		console.log("WHYOWHY");
+
+		// console.log('got here 2')
+
 		res.redirect('/#/map')
 	});
 
@@ -117,5 +122,11 @@ app.get('/auth/google/callback',
 	app.delete('/api/user/removePin/:pinID', mapCtrl.removePin)
 
 
+
 app.listen(8080)
+
+
+
+
+
 
