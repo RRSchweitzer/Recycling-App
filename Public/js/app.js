@@ -3,7 +3,7 @@ var app = angular.module('recycle', ['uiGmapgoogle-maps', 'ngRoute','ui.bootstra
 	app.config(function($routeProvider) {
 		$routeProvider
 		.when('/login', {
-			templateUrl: "login/loginTmpl.html",
+			templateUrl: "Login/loginTmpl.html",
 			controller:  "loginCtrl"
 		})
 		.when('/map', {

@@ -80,7 +80,9 @@ Passport.use(new GoogleStrategy({
 		console.log("got here")
 			userCtrl.updateOrCreate(profile)
 				.then(function(user) {
+					console.log('is done a function?', done);
 					done(null, user);
+					
 				}, function(err) {
 					done(err, profile);
 				})
@@ -91,9 +93,14 @@ app.get('/auth/google', Passport.authenticate('google', { scope: 'https://www.go
 
 app.get('/auth/google/callback',
 	Passport.authenticate('google', 
-	{ failureRedirect: 'http://recycleut.org/#/login' }),
+	{ failureRedirect: 'http://recycleut.org/#/login' },
+	{ successRedirect: 'http://recycleut.org/#/map' }),
 	function (req, res) {
+
+		console.log("WHYOWHY");
+
 		// console.log('got here 2')
+
 		res.redirect('http://recycleut.org/#/map')
 	});
 
@@ -116,6 +123,12 @@ app.get('/auth/google/callback',
 	})
 	app.delete('/api/user/removePin/:pinID', mapCtrl.removePin)
 
-app.listen(port, function() {
-	console.log('port: ' + port)
-})
+
+
+app.listen(8080)
+
+
+
+
+
+
