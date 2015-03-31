@@ -33,13 +33,15 @@ app.use(Passport.session());
 
 //packaging into a cookie to send to the front-end
 Passport.serializeUser(function(user, done) {
-  done(null, user);
+  done(null, user.id);
 });
 
-//saves into req.user
-Passport.deserializeUser(function(obj, done) {
-  done(null, obj);
-});
+    // used to deserialize the user
+    passport.deserializeUser(function(id, done) {
+        User.findById(id, function(err, user) {
+            done(err, user);
+        });
+    });
 
 //Facebook Login
 Passport.use(new FacebookStrategy({
@@ -100,7 +102,7 @@ app.get('/auth/google/callback',
 		console.log("WHYOWHY");
 
 		// console.log('got here 2')
-
+e
 		res.redirect('http://recycleut.org/#/map')
 	});
 
