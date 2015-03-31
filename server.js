@@ -91,10 +91,10 @@ app.get('/auth/google', Passport.authenticate('google', { scope: 'https://www.go
 
 app.get('/auth/google/callback',
 	Passport.authenticate('google', 
-	{ failureRedirect: '/#/login' }),
+	{ failureRedirect: 'http://recycleut.org/#/login' }),
 	function (req, res) {
 		// console.log('got here 2')
-		res.redirect('/#/map')
+		res.redirect('http://recycleut.org/#/map')
 	});
 
 
