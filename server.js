@@ -33,15 +33,13 @@ app.use(Passport.session());
 
 //packaging into a cookie to send to the front-end
 Passport.serializeUser(function(user, done) {
-  done(null, user.id);
+  done(null, user);
 });
 
-    // used to deserialize the user
-    passport.deserializeUser(function(id, done) {
-        User.findById(id, function(err, user) {
-            done(err, user);
-        });
-    });
+//saves into req.user
+Passport.deserializeUser(function(obj, done) {
+  done(null, obj);
+});
 
 //Facebook Login
 Passport.use(new FacebookStrategy({
@@ -96,13 +94,13 @@ app.get('/auth/google', Passport.authenticate('google', { scope: 'https://www.go
 app.get('/auth/google/callback',
 	Passport.authenticate('google', 
 	{ failureRedirect: 'http://recycleut.org/#/login' },
-	{ successRedirect: 'http://recycleut.org/#/map' }),
+	// { successRedirect: 'http://recycleut.org/#/map' }),
 	function (req, res) {
 
 		console.log("WHYOWHY");
 
 		// console.log('got here 2')
-e
+
 		res.redirect('http://recycleut.org/#/map')
 	});
 
