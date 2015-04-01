@@ -93,8 +93,7 @@ app.get('/auth/google', Passport.authenticate('google', { scope: 'https://www.go
 
 app.get('/auth/google/callback',
 	Passport.authenticate('google', 
-	{ failureRedirect: 'http://recycleut.org/#/login' },
-	// { successRedirect: 'http://recycleut.org/#/map' }),
+	{ failureRedirect: 'http://recycleut.org/#/login' }),
 	function (req, res) {
 
 		console.log("WHYOWHY");
