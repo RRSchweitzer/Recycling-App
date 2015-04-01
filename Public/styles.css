@@ -57,6 +57,10 @@ html, body {
     text-align: right;
     box-sizing: border-box;
 }
+.pin-list img {
+    height: 20px;
+    width: 25px;
+}
 
 
 
